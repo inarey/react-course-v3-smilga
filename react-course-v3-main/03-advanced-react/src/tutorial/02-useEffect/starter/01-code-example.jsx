@@ -12,4 +12,5 @@ const CodeExample = () => {
     </div>
   );
 };
+
 export default CodeExample;
