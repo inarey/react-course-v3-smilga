@@ -4,8 +4,13 @@ const ControlledInputs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email);
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h4>Controlled Input</h4>
       <div className="form-row">
         <label htmlFor="name" className="form-label">
@@ -22,7 +27,12 @@ const ControlledInputs = () => {
         <label htmlFor="email" className="form-label">
           Email
         </label>
-        <input type="email" id="email" className="form-input" onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="email"
+          id="email"
+          className="form-input"
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
       <button type="submit" className="btn btn-block">
         Submit
